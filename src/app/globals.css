@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: Lora, Georgia, serif;
+  --font-signature: "Great Vibes", cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  color: #2f2118;
+  background:
+    linear-gradient(rgba(185, 133, 34, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(185, 133, 34, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at top left, rgba(217, 181, 106, 0.2), transparent 28rem),
+    #f7eedc;
+  background-size: 34px 34px, 34px 34px, auto, auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.ornament-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #b98522;
+}
+
+.ornament-divider::before,
+.ornament-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(90deg, transparent, rgba(185, 133, 34, 0.65), transparent);
+}
+
+.paper-texture {
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.45), transparent 12rem),
+    radial-gradient(circle at 80% 0%, rgba(185, 133, 34, 0.13), transparent 20rem);
+}
+
+.book-spine {
+  background: linear-gradient(90deg, rgba(47, 33, 24, 0.16), transparent 18%);
+}

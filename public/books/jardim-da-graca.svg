@@ -1,0 +1,12 @@
+<svg width="900" height="1275" viewBox="0 0 900 1275" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1275" fill="#F7EEDC"/>
+  <rect x="58" y="58" width="784" height="1159" rx="34" fill="#FFF8EC" stroke="#B98522" stroke-width="5"/>
+  <rect x="98" y="98" width="704" height="1079" rx="24" stroke="#D9B56A" stroke-width="2"/>
+  <path d="M450 238C490 296 552 330 626 340C568 378 532 431 520 500C486 441 432 404 358 390C417 355 444 306 450 238Z" fill="#D9B56A" opacity=".45"/>
+  <path d="M300 910C360 835 540 835 600 910" stroke="#B98522" stroke-width="6" stroke-linecap="round"/>
+  <text x="450" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="86" fill="#2F2118">Jardim</text>
+  <text x="450" y="655" text-anchor="middle" font-family="Georgia, serif" font-size="76" fill="#2F2118">da Graça</text>
+  <line x1="260" y1="735" x2="640" y2="735" stroke="#B98522" stroke-width="3"/>
+  <text x="450" y="815" text-anchor="middle" font-family="Georgia, serif" font-size="34" fill="#6F4D35">Reflexões devocionais</text>
+  <text x="450" y="1035" text-anchor="middle" font-family="Georgia, serif" font-size="44" fill="#B98522">Andra</text>
+</svg>

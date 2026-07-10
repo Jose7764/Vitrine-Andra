@@ -1,0 +1,11 @@
+<svg width="900" height="1275" viewBox="0 0 900 1275" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1275" fill="#EFE0C8"/>
+  <rect x="64" y="64" width="772" height="1147" rx="32" fill="#FBF2E3" stroke="#B98522" stroke-width="5"/>
+  <path d="M190 325C300 250 594 250 710 325V870C590 800 306 800 190 870V325Z" fill="#FFF8EC" stroke="#D9B56A" stroke-width="4"/>
+  <path d="M450 296C498 346 552 366 622 360C568 408 534 462 520 535C492 478 440 438 365 416C405 390 433 350 450 296Z" fill="#D9B56A" opacity=".35"/>
+  <text x="450" y="535" text-anchor="middle" font-family="Georgia, serif" font-size="75" fill="#2F2118">Cartas ao</text>
+  <text x="450" y="630" text-anchor="middle" font-family="Georgia, serif" font-size="78" fill="#2F2118">Coração</text>
+  <text x="450" y="735" text-anchor="middle" font-family="Georgia, serif" font-size="32" fill="#6F4D35">cura, espera e recomeço</text>
+  <circle cx="450" cy="885" r="42" fill="#D9B56A" opacity=".55"/>
+  <text x="450" y="1040" text-anchor="middle" font-family="Georgia, serif" font-size="44" fill="#B98522">Andra</text>
+</svg>
