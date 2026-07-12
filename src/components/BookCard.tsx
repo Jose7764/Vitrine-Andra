@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Book } from "@/types/book";
 import { Button } from "@/components/Button";
+import { formatPrice } from "@/lib/formatPrice";
 
 type BookCardProps = {
   book: Book;
@@ -10,7 +11,7 @@ type BookCardProps = {
 
 export function BookCard({ book, compact = false }: BookCardProps) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gold/20 bg-ivory/72 p-4 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-book">
+    <article className="group flex h-full min-w-0 flex-col overflow-hidden rounded-2xl border border-gold/20 bg-ivory/72 p-4 shadow-soft transition duration-300 hover:-translate-y-1 hover:border-gold/40 hover:shadow-book">
       <Link href={`/livros/${book.slug}`} className="block">
         <div className="relative mx-auto aspect-[3/4.25] w-full max-w-[220px] overflow-hidden rounded-xl bg-cream shadow-book">
           <Image
@@ -35,15 +36,15 @@ export function BookCard({ book, compact = false }: BookCardProps) {
             </span>
           ) : null}
         </div>
-        <h3 className="mt-2 font-serif text-2xl leading-tight text-coffee">
+        <h3 className="mt-2 break-words font-serif text-2xl leading-tight text-coffee">
           {book.title}
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-6 text-walnut">
+        <p className="mt-3 line-clamp-4 flex-1 break-words text-sm leading-6 text-walnut">
           {book.shortDescription}
         </p>
-        <div className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-auto flex flex-col gap-4 pt-5 sm:flex-row sm:items-center sm:justify-between">
           <span className="font-serif text-2xl font-semibold text-coffee">
-            {book.price}
+            {formatPrice(book.price)}
           </span>
           <Button href={`/livros/${book.slug}`} variant={compact ? "secondary" : "primary"}>
             Ver detalhes

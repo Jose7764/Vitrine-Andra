@@ -27,8 +27,12 @@ const signature = Great_Vibes({
 
 export const metadata: Metadata = {
   title: "Andra | Livros Digitais",
-  description:
-    "Vitrine editorial de livros digitais cristãos, reflexivos e devocionais."
+  description: "Livros digitais para uma fé mais profunda.",
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png"
+  }
 };
 
 export default function RootLayout({

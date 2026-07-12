@@ -99,7 +99,8 @@ export default defineConfig({
             name: "price",
             label: "Preco",
             required: true,
-            description: "Exemplo: R$ 39,90"
+            description:
+              "Digite apenas o valor, exemplo: 39,90. O site adiciona R$ automaticamente."
           },
           {
             type: "image",
