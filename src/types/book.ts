@@ -1,3 +1,14 @@
+export type Locale = "pt" | "es" | "en";
+
+export type LocalizedBookContent = {
+  title?: string;
+  category?: string;
+  shortDescription?: string;
+  summary?: string;
+};
+
+export type BookTranslations = Partial<Record<Locale, LocalizedBookContent>>;
+
 export type Book = {
   id: string;
   slug: string;
@@ -8,10 +19,11 @@ export type Book = {
   price: string;
   coverImage: string;
   hotmartUrl: string;
-  language: string;
+  language: Locale;
   format: string;
   pages?: number;
   createdAt: string;
   featured?: boolean;
   active?: boolean;
+  translations?: BookTranslations;
 };

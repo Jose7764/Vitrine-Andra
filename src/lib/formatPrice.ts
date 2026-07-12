@@ -9,7 +9,7 @@ export function formatPrice(price: string) {
     .replace(/^R\$\s*/i, "")
     .replace(/\s/g, "");
 
-  const normalizedNumber = normalizePriceNumber(withoutCurrency);
+  const normalizedNumber = parsePrice(withoutCurrency);
 
   if (normalizedNumber === null) {
     return trimmedPrice.startsWith("R$") ? trimmedPrice : `R$ ${trimmedPrice}`;
@@ -21,7 +21,13 @@ export function formatPrice(price: string) {
   }).format(normalizedNumber);
 }
 
-function normalizePriceNumber(value: string) {
+export function parsePrice(price: string | null | undefined) {
+  if (!price) {
+    return null;
+  }
+
+  const value = price.trim().replace(/^R\$\s*/i, "").replace(/\s/g, "");
+
   if (!value) {
     return null;
   }

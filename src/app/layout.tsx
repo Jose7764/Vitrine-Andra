@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Great_Vibes, Lora } from "next/font/google";
 import "./globals.css";
-import { Footer } from "@/components/Footer";
-import { Header } from "@/components/Header";
+import { metadataBase } from "@/i18n/metadata";
 
 const serif = Cormorant_Garamond({
   subsets: ["latin"],
@@ -26,6 +25,7 @@ const signature = Great_Vibes({
 });
 
 export const metadata: Metadata = {
+  metadataBase,
   title: "Andra | Livros Digitais",
   description: "Livros digitais para uma fé mais profunda.",
   icons: {
@@ -35,19 +35,11 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
-  children
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR">
-      <body
-        className={`${serif.variable} ${sans.variable} ${signature.variable} font-sans antialiased`}
-      >
-        <Header />
+    <html lang="pt-BR" data-scroll-behavior="smooth">
+      <body className={`${serif.variable} ${sans.variable} ${signature.variable} font-sans antialiased`}>
         {children}
-        <Footer />
       </body>
     </html>
   );

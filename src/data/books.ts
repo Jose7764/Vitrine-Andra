@@ -1,12 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Book } from "@/types/book";
+import { normalizeBookLanguage } from "@/lib/books";
 
 type BookContent = Omit<Book, "id"> & {
   id?: string;
   pages?: number | null;
   featured?: boolean;
   active?: boolean;
+  language: string;
 };
 
 const booksDirectory = path.join(process.cwd(), "content", "books");
@@ -28,12 +30,13 @@ function normalizeBook(book: BookContent, filename: string): Book {
     price: book.price,
     coverImage: book.coverImage,
     hotmartUrl: book.hotmartUrl,
-    language: book.language,
+    language: normalizeBookLanguage(book.language),
     format: book.format,
     pages: typeof book.pages === "number" ? book.pages : undefined,
     createdAt: book.createdAt,
     featured: book.featured ?? false,
-    active: book.active ?? true
+    active: book.active ?? true,
+    translations: book.translations
   };
 }
 

@@ -52,7 +52,7 @@ export default defineConfig({
             slugify: (values) =>
               slugify(String(values?.slug || values?.title || "novo-livro"))
           },
-          router: ({ document }) => `/livros/${document._sys.filename}`
+          router: ({ document }) => `/pt/livros/${document._sys.filename}`
         },
         fields: [
           {
@@ -119,7 +119,12 @@ export default defineConfig({
             type: "string",
             name: "language",
             label: "Idioma",
-            required: true
+            required: true,
+            options: [
+              { value: "pt", label: "Português" },
+              { value: "es", label: "Español" },
+              { value: "en", label: "English" }
+            ]
           },
           {
             type: "string",
@@ -154,6 +159,48 @@ export default defineConfig({
               dateFormat: "YYYY-MM-DD",
               timeFormat: false
             }
+          },
+          {
+            type: "object",
+            name: "translations",
+            label: "Traduções opcionais",
+            description:
+              "Preencha apenas os idiomas desejados. Campos vazios usam automaticamente o conteúdo original do livro.",
+            fields: [
+              {
+                type: "object",
+                name: "pt",
+                label: "Conteúdo em português",
+                fields: [
+                  { type: "string", name: "title", label: "Título" },
+                  { type: "string", name: "category", label: "Categoria" },
+                  { type: "string", name: "shortDescription", label: "Descrição curta", ui: { component: "textarea" } },
+                  { type: "string", name: "summary", label: "Resumo completo", ui: { component: "textarea" } }
+                ]
+              },
+              {
+                type: "object",
+                name: "es",
+                label: "Contenido en español",
+                fields: [
+                  { type: "string", name: "title", label: "Título" },
+                  { type: "string", name: "category", label: "Categoría" },
+                  { type: "string", name: "shortDescription", label: "Descripción corta", ui: { component: "textarea" } },
+                  { type: "string", name: "summary", label: "Resumen completo", ui: { component: "textarea" } }
+                ]
+              },
+              {
+                type: "object",
+                name: "en",
+                label: "Content in English",
+                fields: [
+                  { type: "string", name: "title", label: "Title" },
+                  { type: "string", name: "category", label: "Category" },
+                  { type: "string", name: "shortDescription", label: "Short description", ui: { component: "textarea" } },
+                  { type: "string", name: "summary", label: "Full summary", ui: { component: "textarea" } }
+                ]
+              }
+            ]
           }
         ]
       }
